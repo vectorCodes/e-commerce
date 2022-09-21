@@ -21,6 +21,10 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: rgb(123, 63, 63);
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
