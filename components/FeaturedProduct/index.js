@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Box, HStack, Image, Spacer, Stack, Text } from "@chakra-ui/react";
 import ReactStars from "react-rating-stars-component";
+import ResponsiveFeaturedProduct from "./ResponsiveFeaturedProduct";
 
-const images = [
+export const images = [
   "/assets/1@2x.png",
   "/assets/2@2x.png",
   "/assets/71usm8vWd1L._AC_SL1500_.png",
@@ -44,8 +45,15 @@ const FeaturedProduct = () => {
           <Image src={images[active]} w={"300px"} alt="logo" />
         </Box>
       </HStack>
+      <Box display={{ base: "block", lg: "none" }}>
+        <ResponsiveFeaturedProduct />
+      </Box>
       <Box mt={6}>
-        <Text textColor={"black"} fontSize={"2xl"} fontWeight={"semibold"}>
+        <Text
+          textColor={"black"}
+          fontSize={{ base: "xl", lg: "2xl" }}
+          fontWeight={"semibold"}
+        >
           SAMSUNG Galaxy S20 FE 5G Factory Unlocked New Android Cell Phone New
           64GB Orange
         </Text>

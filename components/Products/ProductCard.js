@@ -4,7 +4,7 @@ import {
   Center,
   HStack,
   Image,
-  Spacer,
+  chakra,
   Tag,
   Text,
 } from "@chakra-ui/react";
@@ -37,6 +37,23 @@ const ProductCard = ({ title, price, expiry, image, cart }) => {
           </Box>
         </Box>
       </HStack>
+      <Box
+        position={"absolute"}
+        top={3}
+        left={10}
+        rounded={"sm"}
+        p={1}
+        bg={"gray.100"}
+      >
+        <HStack>
+          <Text fontSize={"xs"} fontWeight={"bold"}>
+            Ends:{" "}
+          </Text>
+          <Text fontSize={"sm"} fontWeight={"semibold"}>
+            Jan 08 00:00 pm
+          </Text>
+        </HStack>
+      </Box>
       <Box position={"absolute"} top={4} right={4}>
         <Box rounded={"full"} bg={"white"} shadow={"lg"} p={2}>
           <BsFillBarChartFill size={23} color={"gray"} />
@@ -57,9 +74,14 @@ const ProductCard = ({ title, price, expiry, image, cart }) => {
         <Tag>Your Price</Tag>
       </Center>
       <Center mt={2}>
-        <Text fontSize={"xl"} fontWeight={"semibold"}>
-          ${price}
-        </Text>
+        <HStack spacing={1}>
+          <Text fontSize={"xl"} fontWeight={"bold"}>
+            ${price}
+          </Text>
+          <Text fontSize={"xs"} fontWeight={"semibold"}>
+            99
+          </Text>
+        </HStack>
       </Center>
     </Box>
   );
